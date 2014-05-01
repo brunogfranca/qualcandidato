@@ -90,8 +90,8 @@ def popula_dados():
         ultimo_idx = ultimo_idx.get('idx', 1)
     else:
         ultimo_idx = 1
-    total = len(range(ultimo_idx.get('idx', 1),80000))
-    for i in range(ultimo_idx.get('idx', 1),80000):
+    total = len(range(ultimo_idx,80000))
+    for i in range(ultimo_idx,80000):
         politico = politicos.find_one({'idx':i})
         if not politico:
             dados = carrega_dados_politico(i)
