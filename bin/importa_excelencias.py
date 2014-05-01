@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys, re
 import urllib2
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from tidylib import tidy_document
 from redisconf.config import Config
