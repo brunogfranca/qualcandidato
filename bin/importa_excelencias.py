@@ -86,6 +86,10 @@ def popula_dados():
     print x
     # /DEBUG
     ultimo_idx = politicos.find_one(sort=[('idx', -1)],limit=1)
+    if ultimo_idx:
+        ultimo_idx = ultimo_idx.get('idx', 1)
+    else:
+        ultimo_idx = 1
     total = len(range(ultimo_idx.get('idx', 1),80000))
     for i in range(ultimo_idx.get('idx', 1),80000):
         politico = politicos.find_one({'idx':i})
