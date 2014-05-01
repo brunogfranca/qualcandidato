@@ -90,8 +90,8 @@ def popula_dados():
         ultimo_idx = ultimo_idx.get('idx', 1)
     else:
         ultimo_idx = 1
-    total = len(range(ultimo_idx,80000))
-    for i in range(ultimo_idx,80000):
+    total = len(range(ultimo_idx,100000))
+    for i in range(ultimo_idx,100000):
         # DEBUG
         if count % 1 == 0:
             percent = (float(count) / total) * 100.0
