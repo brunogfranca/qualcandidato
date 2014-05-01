@@ -92,12 +92,6 @@ def popula_dados():
         ultimo_idx = 1
     total = len(range(ultimo_idx,80000))
     for i in range(ultimo_idx,80000):
-        politico = politicos.find_one({'idx':i})
-        if not politico:
-            dados = carrega_dados_politico(i)
-            if not dados:
-                continue
-            salvar_dados(dados)
         # DEBUG
         if count % 1 == 0:
             percent = (float(count) / total) * 100.0
@@ -113,5 +107,11 @@ def popula_dados():
             sys.stdout.flush()
         count += 1
         # /DEBUG
+        politico = politicos.find_one({'idx':i})
+        if not politico:
+            dados = carrega_dados_politico(i)
+            if not dados:
+                continue
+            salvar_dados(dados)
 
 popula_dados()
